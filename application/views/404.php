@@ -6,9 +6,7 @@
 <title>Business Linkage</title>
 <link rel="shortcut icon" href="<?php echo base_url();?>images/head.png" type="image/x-icon"/>
 <link rel="stylesheet" href="<?php echo base_url();?>css/style.css"  type="text/css" />
-<!--[if IE 9]>
-    <link rel="stylesheet" media="screen" href="ie9.css" tppabs="http://themepixels.com/themes/demo/webpage/starlight/css/ie9.css"/>
-<![endif]-->
+
 
 <!--[if IE 8]>
     <link rel="stylesheet" media="screen" href="ie8.css" tppabs="http://themepixels.com/themes/demo/webpage/starlight/css/ie8.css"/>
