@@ -148,17 +148,21 @@ and send it to campanies. Because of You can do all these services electronic , 
                 <div class="widgetbox" style="">
                         <div class="title"><h2 class="general"><span>Log In</span></h2></div>
                         <div class="widgetcontent stdform stdformwidget">
-                        <form action="#" method="post" >
+                         <?php echo form_open('site/login_validation');
+                               echo validation_errors();            ?> 
+                        
                             <div class="par">
-                            	<label>Username</label>
+                            	<label>Email</label>
                                 <div class="field">
-                                	<input type="text" name="id" class="longinput" />
+                                <?php  echo form_input('email'); ?>
+                                	
                                 </div>
                             </div><!--par-->
                             <div class="par">
                             	<label>Password</label>
                                 <div class="field">
-                                	<input type="password" name="password" class="longinput" /> <br />
+                                
+                                <?php echo form_password('password'); ?><br />
                                 </div>
                                 <br />
                                 <div class="field">
@@ -169,7 +173,9 @@ and send it to campanies. Because of You can do all these services electronic , 
                             </div><!--par-->
                             <div class="par">
                                 <div class="field">
-                                	<button class="radius2">Log In</button>
+                                   <?php echo form_submit('login_submit','Login');
+                                   echo form_close();?>
+                                	
                                 </div>
                             </div><!--par-->
                             </form>
@@ -183,39 +189,52 @@ and send it to campanies. Because of You can do all these services electronic , 
                 <div class="widgetbox" style="">
                         <div class="title"><h2 class="general"><span>Registration</span></h2></div>
                         <div class="widgetcontent stdform stdformwidget">
-                        <form action="#" method="post" >
+                        <?php echo form_open('site/signup_validation');echo validation_errors();?>
                             <div class="par">
                             	<label>Username</label>
                                 <div class="field">
-                                	<input type="text" name="id" class="longinput" />
+                                    <?php echo form_input('username'); ?>
+                                	
                                 </div>
                             </div><!--par-->
                              <div class="par">
                             	<label>Email</label>
                                 <div class="field">
-                                	<input type="text" name="email" class="longinput" /> <br />
+                                    <?php echo form_input('email'); ?><br />
                                 </div>
                                 </div><!--par-->
                             <div class="par">
                             	<label>Password</label>
                                 <div class="field">
-                                	<input type="password" name="password" class="longinput" /> <br />
+                                   <?php echo form_password('password'); ?><br />
                                 </div>
                                 </div><!--par-->
                                 <div class="par">
                             	<label>Confirm Password</label>
                                 <div class="field">
-                                	<input type="password" name="confirm_password" class="longinput" /> <br />
+                                 <?php echo form_password('cpassword'); ?><br />
                                 </div>
+                              
+                                <div class="par">
+                            	<label>Country</label>
+                                <div class="field">
+                             <?php $options = array(
+                            'egypt'  => 'egypt',
+                            'usa'    => 'usa',
+                            'england'   => 'england',
+                            'moroco' => 'moroco',
+                             );
+                             echo form_dropdown('country', $options, 'large');?><br />
                             </div><!--par-->
+                            
                             <div class="par">
                             <label>Gender</label>
-                          	<input type="radio" name="gender" /> Male &nbsp;
-                            	<input type="radio" name="gender" /> Famale 
+                               <?php echo form_radio('gender', 'male'). " Male"; ?>
+                               <?php echo form_radio('gender', 'female'). " Female"; ?>
                             </div>
                             <div class="par">
                                 <div class="field">
-                                	<button class="radius2">Continue</button>
+                                    <?php echo form_submit('signup_submit','Sign up'); echo form_close();?>
                                 </div>
                             </div><!--par-->
                         </form>
