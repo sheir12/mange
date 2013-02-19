@@ -80,7 +80,7 @@
                 <img src="<?php echo base_url();?>images/slideshow/1.jpg" data-thumb="<?php echo base_url();?>images/slideshow/1.jpg" alt="" />
                 <img src="<?php echo base_url();?>images/slideshow/2.jpg" data-thumb="<?php echo base_url();?>images/slideshow/2.jpg" alt="" />
                 <img src="<?php echo base_url();?>images/slideshow/3.jpg" data-thumb="<?php echo base_url();?>images/slideshow/3.jpg" alt="" data-transition="slideInLeft" />
-                <img src="<?php echo base_url();?>images/slideshow/4.jpg" data-thumb=images/slideshow/4.jpg" alt=""  />
+                <img src="<?php echo base_url();?>images/slideshow/4.jpg" data-thumb="<?php echo base_url();?>images/slideshow/4.jpg" alt=""  />
             </div>
 
     </div>
@@ -100,7 +100,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                         </div><!--contenttitle-->
                         <br />
                         <p><q style="float:right ;  width:30%">Having the ability of make a meeting between employees by video conference .</q>
-                        <a href="#" title="Video Conference"><img src="images/video.png" width="70%" height="213" /><span></span></a>
+                        <a href="#" title="Video Conference"><img src="<?php echo base_url();?>images/video.png" width="70%" height="213" /><span></span></a>
                     	</p>
                     </div><!--one_half-->
                     
@@ -109,7 +109,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                             <h2 class="general"><span>Search for a job</span></h2>
                         </div><!--contenttitle-->
                         <br />
-                       <p> <q style="float:right ;  width:30%">Write your CV and send it for a suitable companies of your abilities .</q><a href="#" title="Search for a Job"><img src="images/job.png" width="70%" height="213" /><span></span></a>
+                       <p> <q style="float:right ;  width:30%">Write your CV and send it for a suitable companies of your abilities .</q><a href="#" title="Search for a Job"><img src="<?php echo base_url();?>images/job.png" width="70%" height="213" /><span></span></a>
                     	 </p>
                     </div><!--one_half-->
                     <br clear="all" /><br /><br clear="all" /><br />
@@ -119,7 +119,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                         </div><!--contenttitle-->
                         <br />
                         <p><q style="float:right ;  width:30%">Bulid the tree of your company and state the function of every employee . </q>
-                        	<a href="#" title="Build your company"><img src="images/bulid.png" width="70%" height="213" /><span></span></a>
+                        	<a href="#" title="Build your company"><img src="<?php echo base_url();?>images/bulid.png" width="70%" height="213" /><span></span></a>
                     	 </p>
                     </div><!--one_half-->
                     
@@ -129,7 +129,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                         </div><!--contenttitle-->
                         <br />
                         	<p><q style="float:right ;  width:30%">Your Campany can search and see other company's history and make a deal .</q>
-                            <a href="#" title="Community"><img src="images/meeting.png" width="70%" height="213" /><span></span></a>
+                            <a href="#" title="Community"><img src="<?php echo base_url();?>images/meeting.png" width="70%" height="213" /><span></span></a>
                     	 </p>
                     </div><!--one_half-->
                    
@@ -149,12 +149,15 @@ and send it to campanies. Because of You can do all these services electronic , 
                         <div class="title"><h2 class="general"><span>Log In</span></h2></div>
                         <div class="widgetcontent stdform stdformwidget">
                          <?php echo form_open('site/login_validation');
-                               echo validation_errors();            ?> 
+                                 ?>
+                                 <div style="color:#F30">
+                                 <?php if(isset($login)){ echo validation_errors()  ;  } ?>
+                                 </div> 
                         
                             <div class="par">
                             	<label>Email</label>
                                 <div class="field">
-                                <?php  echo form_input('email'); ?>
+                                <?php  echo form_input(array('name'=>'email','class'=>'longinput')); ?>
                                 	
                                 </div>
                             </div><!--par-->
@@ -162,7 +165,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                             	<label>Password</label>
                                 <div class="field">
                                 
-                                <?php echo form_password('password'); ?><br />
+                                <?php echo form_password(array('name'=>'password','class'=>'longinput')); ?><br />
                                 </div>
                                 <br />
                                 <div class="field">
@@ -189,35 +192,39 @@ and send it to campanies. Because of You can do all these services electronic , 
                 <div class="widgetbox" style="">
                         <div class="title"><h2 class="general"><span>Registration</span></h2></div>
                         <div class="widgetcontent stdform stdformwidget">
-                        <?php echo form_open('site/signup_validation');echo validation_errors();?>
+                        <?php echo form_open('site/signup_validation');  ?>
+                          <div style="color:#F30">
+                                 <?php echo validation_errors()  ;  if(isset($regist)){echo $regist ;}  ?>
+                                 
+                                 </div> 
                             <div class="par">
                             	<label>Username</label>
                                 <div class="field">
-                                    <?php echo form_input('username'); ?>
+                                    <?php echo form_input(array('name'=>'username','class'=>'longinput')); ?>
                                 	
                                 </div>
                             </div><!--par-->
                              <div class="par">
                             	<label>Email</label>
                                 <div class="field">
-                                    <?php echo form_input('email'); ?><br />
+                                    <?php echo form_input(array('name'=>'email','class'=>'longinput')); ?><br />
                                 </div>
                                 </div><!--par-->
                             <div class="par">
                             	<label>Password</label>
                                 <div class="field">
-                                   <?php echo form_password('password'); ?><br />
+                                   <?php echo form_password(array('name'=>'password','class'=>'longinput')); ?><br />
                                 </div>
                                 </div><!--par-->
                                 <div class="par">
                             	<label>Confirm Password</label>
                                 <div class="field">
-                                 <?php echo form_password('cpassword'); ?><br />
+                                 <?php echo form_password(array('name'=>'cpassword','class'=>'longinput')); ?><br />
                                 </div>
                               
-                                <div class="par">
+                                <div class="par" style="float:left">
                             	<label>Country</label>
-                                <div class="field">
+                                <div  class="field">
                              <?php $options = array(
                             'egypt'  => 'egypt',
                             'usa'    => 'usa',
@@ -227,7 +234,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                              echo form_dropdown('country', $options, 'large');?><br />
                             </div><!--par-->
                             
-                            <div class="par">
+                            <div class="par" >
                             <label>Gender</label>
                                <?php echo form_radio('gender', 'male'). " Male"; ?>
                                <?php echo form_radio('gender', 'female'). " Female"; ?>
@@ -246,7 +253,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                 	<div class="title"><h2 class="general"><span>Business Linkage!!!</span></h2></div>
                     <div class="widgetcontent stdform stdformwidget ">
                      <p><small style="float:right ;  width:30% ; line-height:15px"> This Video introduce the idea of Business Linkage , How to build your company and How to use the site ... </small>
-                        	<a class="voverlay" href="index_videolb/player.swf?url=video/demo.FLV&volume=100" title="Our site services"><img src="index_videolb/thumbnails/demo.png" width="70%" height="70%"  alt="Business Linkage" /></a>
+                        	<a class="voverlay" href="index_videolb/player.swf?url=video/demo.FLV&volume=100" title="Our site services"><img src="<?php echo base_url();?>index_videolb/thumbnails/demo.png" width="70%" height="70%"  alt="Business Linkage" /></a>
                     	 </p>
                     	
                     </div><!--widgetcontent-->

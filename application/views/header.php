@@ -30,7 +30,7 @@
                 <div id="userPanel" class="headercolumn">
                     <a href="" class="userinfo radius2">
                         <img src="<?php echo base_url();?>images/avatar.png" tppabs="http://themepixels.com/themes/demo/webpage/starlight/images/avatar.png" alt="" class="radius2" />
-                        <span><strong>Justin Meller</strong></span>
+                        <span><strong>Mohamed Temraz</strong></span>
                     </a>
                     <div class="userdrop">
                         <ul>

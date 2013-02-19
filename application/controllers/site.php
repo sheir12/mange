@@ -21,7 +21,8 @@ class Site extends CI_Controller {
             if($this->form_validation->run()){
                 redirect('main/members');
             }else{
-                $this->load->view('index');
+				$data['login']="hi";
+                $this->load->view('index',$data);
             }
             
         }
@@ -53,7 +54,8 @@ class Site extends CI_Controller {
                 if($this->form_validation->run()){
                     $this->load->model('model_users');		
 	if($this->model_users->add_temp_user()){
-	        echo "peeeeeeeeeeeeeeace";
+		$data['regist']='successfully registration';
+	        $this->load->view('index',$data);
 	} else {
 		echo "Problem add to database";
 		return false;
@@ -61,8 +63,8 @@ class Site extends CI_Controller {
 			
 			
 		} else {
-			echo "Problem add to database";
-			//$this->load->view('index');
+			$data['regist']="hi";
+			$this->load->view('index',$data);
 		}
                 }
 
