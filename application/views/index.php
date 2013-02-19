@@ -245,7 +245,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                                 </div>
                             </div><!--par-->
                         </form>
-                         <small><a href="#" >Registration Page</a></small>
+                         <small><a href="#" >Employees Registration Page</a></small>
                     </div><!--widgetcontent-->
                 </div><!--widgetbox-->
                 

@@ -54,7 +54,7 @@ class Site extends CI_Controller {
                 if($this->form_validation->run()){
                     $this->load->model('model_users');		
 	if($this->model_users->add_temp_user()){
-		$data['regist']='successfully registration';
+		$data['regist']='successfully registration thanks for you';
 	        $this->load->view('index',$data);
 	} else {
 		echo "Problem add to database";
@@ -63,7 +63,7 @@ class Site extends CI_Controller {
 			
 			
 		} else {
-			$data['regist']="hi";
+			$data['not_regist']="please put your correct data";
 			$this->load->view('index',$data);
 		}
                 }
