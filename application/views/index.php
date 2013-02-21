@@ -45,7 +45,7 @@
 	<div class="header radius3">
     	<div class="headerinner">
         	
-            <a href=""><img src="<?php echo base_url();?>images/logo.png" tppabs="http://themepixels.com/themes/demo/webpage/starlight/images/starlight_admin_template_logo_small.png" alt="" /></a>
+            <a href="<?php echo base_url();?>site/"><img src="<?php echo base_url();?>images/logo.png" tppabs="http://themepixels.com/themes/demo/webpage/starlight/images/starlight_admin_template_logo_small.png" alt="" /></a>
             
               
             <div class="headright">
@@ -176,7 +176,7 @@ and send it to campanies. Because of You can do all these services electronic , 
                             </div><!--par-->
                             <div class="par">
                                 <div class="field">
-                                   <?php echo form_submit('login_submit','Login');
+                                   <?php  echo form_submit('login_submit','Login');
                                    echo form_close();?>
                                 	
                                 </div>
@@ -194,7 +194,8 @@ and send it to campanies. Because of You can do all these services electronic , 
                         <div class="widgetcontent stdform stdformwidget">
                         <?php echo form_open('site/signup_validation');  ?>
                           <div style="color:#F30">
-                                 <?php echo validation_errors()  ;  if(isset($regist)){echo $regist ;}  ?>
+                              
+                                 <?php if(! isset($login)) { echo validation_errors();}  if(isset($regist)){echo $regist ;}  ?>
                                  
                                  </div> 
                             <div class="par">

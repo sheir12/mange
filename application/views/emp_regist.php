@@ -45,7 +45,7 @@
 	<div class="header radius3">
     	<div class="headerinner">
         	
-            <a href=""><img src="<?php echo base_url();?>images/logo.png" tppabs="http://themepixels.com/themes/demo/webpage/starlight/images/starlight_admin_template_logo_small.png" alt="" /></a>
+            <a href="<?php echo base_url();?>site/"><img src="<?php echo base_url();?>images/logo.png" tppabs="http://themepixels.com/themes/demo/webpage/starlight/images/starlight_admin_template_logo_small.png" alt="" /></a>
            <div class="headright">
            <div class="headercolumn">&nbsp;</div>
         
@@ -158,11 +158,11 @@
                     <option value="bm"   >Bermuda</option>
                     <option value="bt"   >Bhutan</option>
                     <option value="bo"   >Bolivia</option>
-                    <option value="ba"   >Bosnia and Herzegovina</option>
+
                     <option value="bw"   >Botswana</option>
                     <option value="bv"   >Bouvet Island</option>
                     <option value="br"   >Brazil</option>
-                    <option value="io"   >British Indian Ocean Territory</option>
+
                     <option value="vg"   >British Virgin Islands</option>
                     <option value="bn"   >Brunei</option>
                     <option value="bg"   >Bulgaria</option>
@@ -188,7 +188,7 @@
                     <option value="cu"   >Cuba</option>
                     <option value="cy"   >Cyprus</option>
                     <option value="cz"   >Czech Republic</option>
-                    <option value="cd"   >Democratic Republic of Congo</option>
+
                     <option value="dk"   >Denmark</option>
                     <option value="xx"   >Disputed Territory</option>
                     <option value="dj"   >Djibouti</option>
@@ -204,13 +204,13 @@
                     <option value="et"   >Ethiopia</option>
                     <option value="fk"   >Falkland Islands</option>
                     <option value="fo"   >Faroe Islands</option>
-                    <option value="fm"   >Federated States of Micronesia</option>
+
                     <option value="fj"   >Fiji</option>
                     <option value="fi"   >Finland</option>
                     <option value="fr"   >France</option>
                     <option value="gf"   >French Guyana</option>
                     <option value="pf"   >French Polynesia</option>
-                    <option value="tf"   >French Southern Territories</option>
+
                     <option value="ga"   >Gabon</option>
                     <option value="gm"   >Gambia</option>
                     <option value="ge"   >Georgia</option>
@@ -227,7 +227,7 @@
                     <option value="gw"   >Guinea-Bissau</option>
                     <option value="gy"   >Guyana</option>
                     <option value="ht"   >Haiti</option>
-                    <option value="hm"   >Heard Island and McDonald Islands</option>
+
                     <option value="hn"   >Honduras</option>
                     <option value="hk"   >Hong Kong</option>
                     <option value="hu"   >Hungary</option>
@@ -236,7 +236,7 @@
                     <option value="id"   >Indonesia</option>
                     <option value="ir"   >Iran</option>
                     <option value="iq"   >Iraq</option>
-                    <option value="xe"   >Iraq-Saudi Arabia Neutral Zone</option>
+
                     <option value="ie"   >Ireland</option>
                     <option value="il"   >Israel</option>
                     <option value="it"   >Italy</option>
@@ -312,11 +312,11 @@
                     <option value="ro"   >Romania</option>
                     <option value="ru"   >Russia</option>
                     <option value="rw"   >Rwanda</option>
-                    <option value="sh"   >Saint Helena and Dependencies</option>
+
                     <option value="kn"   >Saint Kitts & Nevis</option>
                     <option value="lc"   >Saint Lucia</option>
                     <option value="pm"   >Saint Pierre and Miquelon</option>
-                    <option value="vc"   >Saint Vincent and the Grenadines</option>
+
                     <option value="ws"   >Samoa</option>
                     <option value="sm"   >San Marino</option>
                     <option value="st"   >Sao Tome and Principe</option>
@@ -330,14 +330,14 @@
                     <option value="sb"   >Solomon Islands</option>
                     <option value="so"   >Somalia</option>
                     <option value="za"   >South Africa</option>
-                    <option value="gs"   >South Georgia and the South Sandwich Islands</option>
+
                     <option value="kr"   >South Korea</option>
                     <option value="es"   >Spain</option>
                     <option value="pi"   >Spratly Islands</option>
                     <option value="lk"   >Sri Lanka</option>
                     <option value="sd"   >Sudan</option>
                     <option value="sr"   >Suriname</option>
-                    <option value="sj"   >Svalbard and Jan Mayen Islands</option>
+
                     <option value="sz"   >Swaziland</option>
                     <option value="se"   >Sweden</option>
                     <option value="ch"   >Switzerland</option>
@@ -360,7 +360,7 @@
                     <option value="ae"   >United Arab Emirates</option>
                     <option value="uk"   >United Kingdom</option>
                     <option value="us"   >United States</option>
-                    <option value="um"   >United States Minor Outlying Islands</option>
+
                     <option value="uy"   >Uruguay</option>
                     <option value="vi"   >US Virgin Islands</option>
                     <option value="uz"   >Uzbekistan</option>
@@ -368,7 +368,7 @@
                     <option value="va"   >Vatican City</option>
                     <option value="ve"   >Venezuela</option>
                     <option value="vn"   >Vietnam</option>
-                    <option value="wf"   >Wallis and Futuna Islands</option>
+
                     <option value="eh"   >Western Sahara</option>
                     <option value="ye"   >Yemen</option>
                     <option value="zm"   >Zambia</option>

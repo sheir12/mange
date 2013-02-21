@@ -2,12 +2,16 @@
 
 class Model_users extends CI_Model {
     public function can_log_in(){
-        $this->db->where('email', $this->input->post('email'));
-        $this->db->where('password', md5($this->input->post('password')));
+        $emaiil=  $this->input->post('email');
+        $password= md5($this->input->post('password'));
         
-        $query = $this->db->get(users);
+      // $emaiil= $this->db->where('email', $this->input->post('email'));
+      // $password= $this->db->where('password', md5($this->input->post('password')));
         
-        if($query->num_rows() == 1){
+        $query = "select id from users where email=? and password=?";
+        $result=$this->db->query($query,array($emaiil,$password));
+        
+        if($result->num_rows() == 1){
             return true;
         } else {
             return false;
