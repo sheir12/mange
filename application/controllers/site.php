@@ -67,6 +67,44 @@ class Site extends CI_Controller {
 			$this->load->view('index',$data);
 		}
                 }
+        ////////////////////////////////
+        public function employee_validation(){
+                $this->load->library('form_validation');
+                $this->form_validation->set_rules('firstname','Firstname','required|trim');
+                $this->form_validation->set_rules('firstname','Lastname','required|trim');
+		$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[users.email]');
+                $this->form_validation->set_rules('confirmation','Confirmation_code','required|trim');
+                $this->form_validation->set_rules('password','Password','required|trim');
+		$this->form_validation->set_rules('cpassword','Confirm password','required|trim|matches[password]');
+                $this->form_validation->set_rules('gender','Gender','required|trim');
+                $this->form_validation->set_rules('country','Country','required|trim');
+                $this->form_validation->set_rules('mobile','mobile','required|trim');
+                $this->form_validation->set_rules('phone','Phone','required|trim');
+                $this->form_validation->set_rules('website','Website','required|trim');
+                $this->form_validation->set_rules('address','Address','required|trim');
+                $this->form_validation->set_rules('location','Current_location','required|trim');
+                $this->form_validation->set_rules('birthday','Birthday','required|trim');
+                $this->form_validation->set_rules('birthday','Birthday','required|trim');
+                $this->form_validation->set_rules('about','About_you','required|trim');
+                
+		$this->form_validation->set_message('is_unique', "That email address already exists.");
+                
+                if($this->form_validation->run()){
+                    $this->load->model('model_users');		
+	if($this->model_users->add_temp_emplyee()){
+		$data['regist']='successfully registration thanks for you';
+	        $this->load->view('emp_regist',$data);
+	} else {
+		echo "Problem add to database";
+		return false;
+	}
+			
+			
+		} else {
+			$data['not_regist']="please put your correct data";
+			$this->load->view('emp_regist',$data);
+		}
+                }
 
         ////////////////////////////////
 	public function buttons()

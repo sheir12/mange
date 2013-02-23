@@ -34,6 +34,32 @@ class Model_users extends CI_Model {
             return false;
         }
     }
+    
+        public function add_temp_emplyee(){
+         $phonenum = $this->input->post('mobile') . $this->input->post('phone') ;
+        $data = array(
+            'firstname' => $this->input->post('firstname'),
+            'lastname' => $this->input->post('lastname'),
+            'gender' => $this->input->post('gender'),
+            'email' => $this->input->post('email'),
+            'password' => md5($this->input->post('password')),
+            'confirmid' => md5($this->input->post('confirmation')),
+            'phone' => $phonenum,
+            'website' => $this->input->post('website'),
+            'address' => $this->input->post('address'),
+            'location' => $this->input->post('location'),
+            'country' => $this->input->post('country'),
+            'birthday' => $this->input->post('birthday'),
+            'about' => $this->input->post('about'),
+            
+        );
+        $query = $this->db->insert('employees', $data);
+        if($query){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 ?>
