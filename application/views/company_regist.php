@@ -83,23 +83,23 @@
                             <div id="tabs-1">
                                
                    <div class="contenttitle">
-                    	<h2 class="form"><span>Emplyee Registeration</span></h2>
+                    	<h2 class="form"><span>Company Registeration</span></h2>
                     </div><!--contenttitle-->
                     
                     
                           <div id="form2" class="stdform stdform2">
-                          <?php echo form_open('site/employee_validation');  ?>
+                          <?php echo form_open('site/company_validation');  ?>
                           <div style="color:#F30">
                                  <?php echo validation_errors()  ;   ?>
                           </div>
                       <p>
-                        	<label>First Name</label>
-                            <span class="field"><?php echo form_input(array('name'=>'firstname','class'=>'longinput')); ?></span>
+                        	<label>Company Name</label>
+                            <span class="field"><?php echo form_input(array('name'=>'name','class'=>'longinput')); ?></span>
                         </p>
                         
                         <p>
-                        	<label>Last Name</label>
-                            <span class="field"><?php echo form_input(array('name'=>'lastname','class'=>'longinput')); ?></span>
+                        	<label>Field</label>
+                            <span class="field"><?php echo form_input(array('name'=>'field','class'=>'longinput')); ?></span>
                         </p>
                         
                         <p>
@@ -111,27 +111,7 @@
                         	<label>Confirmation Code</label>
                             <span class="field"><?php echo form_password(array('name'=>'confirmation','class'=>'longinput')); ?></span>
                         </p>
-                        
-                        <p>
-                        	<label>Password</label>
-                            <span class="field"><?php echo form_password(array('name'=>'password','class'=>'longinput')); ?></span>
-                        </p>
-                        
-                        <p>
-                        	<label>Confirm Password</label>
-                            <span class="field"><?php echo form_password(array('name'=>'cpassword','class'=>'longinput')); ?></span>
-                        </p>
-                        
-                         <p>
-                        	<label>Gender</label>
-                            <span class="field">
-                               <?php echo form_radio('gender', 'male'). " Male"; ?>&nbsp;&nbsp;&nbsp;
-                               <?php echo form_radio('gender', 'female'). " Female"; ?>
-                           </span>
-                        </p>
-                        
-                        
-                    	                        
+                                            
                         <p>
                         	<label>Country</label>
                             <span class="field">
@@ -432,16 +412,21 @@
                         </p>
                         
                         <p>
-                        	<label>Birthday</label>
-                            <span class="field"><?php echo form_input(array('name'=>'birthday','class'=>'longinput')); ?></span>
+                        	<label>Founded</label>
+                            <span class="field"><?php echo form_input(array('name'=>'found','class'=>'longinput')); ?></span>
                         </p>
-                        
-                        
                         <p>
-                        	<label>About You</label>
+                        	<label>Company Overview</label>
                                 
-                            <span class="field"><?php echo form_textarea(array('name'=>'about','class'=>'mediuminput','cols'=> '80' ,'rows'=>'5')); ?></span> 
+                            <span class="field"><?php echo form_textarea(array('name'=>'overview','class'=>'mediuminput','cols'=> '80' ,'rows'=>'5')); ?></span> 
                         </p>
+                              
+                        <p>
+                        	<label>Mission</label>
+                                
+                            <span class="field"><?php echo form_textarea(array('name'=>'mission','class'=>'mediuminput','cols'=> '80' ,'rows'=>'5')); ?></span> 
+                        </p>
+                              
                         
                        
                           <p class="stdformbutton">
@@ -457,7 +442,7 @@
                                 Your content goes here for tab 2
                             </div>
                             <div id="tabs-3">
-                            <small><a href="<?php echo base_url();?>site/company" >Company Registration Page</a></small> 
+                             Your content goes here for tab 2
                             </div>
 					</div><!--#tabs-->
                      

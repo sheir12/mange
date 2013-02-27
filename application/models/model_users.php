@@ -1,6 +1,9 @@
 <?php
 
 class Model_users extends CI_Model {
+    
+    //////////////////////////////////////////////
+    
     public function can_log_in(){
         $emaiil=  $this->input->post('email');
         $password= md5($this->input->post('password'));
@@ -19,7 +22,9 @@ class Model_users extends CI_Model {
         
     }
     
-        public function add_temp_user(){
+    /////////////////////////////////////////////
+    
+    public function add_temp_user(){
         $data = array(
             'username' => $this->input->post('username'),
             'gender' => $this->input->post('gender'),
@@ -35,7 +40,9 @@ class Model_users extends CI_Model {
         }
     }
     
-        public function add_temp_emplyee(){
+    ////////////////////////////////////////////////
+    
+    public function add_temp_emplyee(){
          $phonenum = $this->input->post('mobile') . $this->input->post('phone') ;
         $data = array(
             'firstname' => $this->input->post('firstname'),
@@ -54,6 +61,33 @@ class Model_users extends CI_Model {
             
         );
         $query = $this->db->insert('employees', $data);
+        if($query){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    ///////////////////////////////////////////////
+    
+    public function add_temp_company(){
+        $phonenum = $this->input->post('mobile') . $this->input->post('phone') ;
+        $data = array(
+            'name' => $this->input->post('name'),
+            'field' => $this->input->post('field'),
+            'email' => $this->input->post('email'),
+            'phone' => $phonenum,
+            'confirmid' => md5($this->input->post('confirmation')),
+            'website' => $this->input->post('website'),
+            'address' => $this->input->post('address'),
+            'location' => $this->input->post('location'),
+            'country' => $this->input->post('country'),
+            'founded' => $this->input->post('found'),
+            'overview' => $this->input->post('overview'),
+            'mission' => $this->input->post('mission')
+            
+        );
+        $query = $this->db->insert('company', $data);
         if($query){
             return true;
         } else {

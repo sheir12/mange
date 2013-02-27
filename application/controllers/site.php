@@ -6,12 +6,15 @@ class Site extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
-
+        
+        //////////////////////////////
+        
 	public function login()
 	{
 		//$this->load->view('index_login');
 	}
         ///////////////////////////////
+        
         public function login_validation(){
             $this->load->library('form_validation');
             $this->form_validation->set_rules('email','Email');
@@ -26,7 +29,9 @@ class Site extends CI_Controller {
             }
             
         }
-        /////////////////////////////
+        
+        /////////////////////////////////
+        
         public function validate_credentials(){
             $this->load->model('model_users');
 	
@@ -39,7 +44,9 @@ class Site extends CI_Controller {
 	}
 
         }
-        ////////////////////////////////
+        
+        ///////////////////////////////////
+        
         public function signup_validation(){
                 $this->load->library('form_validation');
                 $this->form_validation->set_rules('username','Username','required|trim');
@@ -67,7 +74,9 @@ class Site extends CI_Controller {
 			$this->load->view('index',$data);
 		}
                 }
-        ////////////////////////////////
+                
+        ///////////////////////////////////
+                
         public function employee_validation(){
                 $this->load->library('form_validation');
                 $this->form_validation->set_rules('firstname','Firstname','required|trim');
@@ -105,7 +114,50 @@ class Site extends CI_Controller {
 			$this->load->view('emp_regist',$data);
 		}
                 }
-
+                
+        ///////////////////////////////////
+        
+        public function company_validation(){
+                $this->load->library('form_validation');
+                $this->form_validation->set_rules('name','Name','required|trim');
+                $this->form_validation->set_rules('field','Filed','required|trim');
+		$this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[users.email]');
+                $this->form_validation->set_rules('confirmation','Confirmation_code','required|trim');
+                $this->form_validation->set_rules('country','Country','required|trim');
+                $this->form_validation->set_rules('mobile','mobile','required|trim');
+                $this->form_validation->set_rules('phone','Phone','required|trim');
+                $this->form_validation->set_rules('website','Website','required|trim');
+                $this->form_validation->set_rules('address','Address','required|trim');
+                $this->form_validation->set_rules('location','Current_location','required|trim');
+                $this->form_validation->set_rules('found','Founded','required|trim');
+                $this->form_validation->set_rules('overview','overview','required|trim');
+                $this->form_validation->set_rules('mission','Mission','required|trim');
+                
+                
+		$this->form_validation->set_message('is_unique', "That email address already exists.");
+                
+                if($this->form_validation->run()){
+                    $this->load->model('model_users');		
+	if($this->model_users->add_temp_company()){
+		$data['regist']='successfully registration thanks for you';
+	        $this->load->view('company_regist',$data);
+	} else {
+		echo "Problem add to database";
+		return false;
+	}
+			
+			
+		} else {
+			$data['not_regist']="please put your correct data";
+			$this->load->view('company_regist',$data);
+		}
+                }
+                
+        ////////////////////////////////
+        public function company()
+	{
+		$this->load->view('company_regist');
+	}
         ////////////////////////////////
 	public function buttons()
 	{
